@@ -1,0 +1,17 @@
+.dashboard-layout {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: #e1d6ff;
+    padding: 12px;
+}
+
+.dashboard-content {
+    width: 82%;
+    height: 100%;
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 4px rgb(120, 120, 120, .4);
+}

@@ -70,7 +70,7 @@ To run the project locally in development mode:
 
 ## Project Structure
 ### Here’s a breakdown of the project's directory structure:
-    ```pgsql
+    ```
     /pages                    - Page components, including routes for courses, assignments, login, etc.
     /components               - Reusable components (header, footer, forms, etc.)
     /public                   - Public assets (images, fonts, etc.)

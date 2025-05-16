@@ -334,6 +334,28 @@
     justify-content: center;
 }
 
+.courses-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.courses-page-header {
+    width: 100%;
+    font-size: .96rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.courses-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    /* background-color: rgba(149, 9, 209, 0.138); */
+}
+
 @media screen and (max-width: 996px) {
     .dashboard-index {
         width: 100%;

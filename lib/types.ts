@@ -53,3 +53,44 @@ export type tSidebaritem = {
     nav: string,
     icon: React.ReactNode
 }
+
+export type tSearchbar = {
+    placeholder: string,
+    value: string,
+    handleChange: (arg: string) => void,
+    handleClick: () => void
+}
+
+export type tIconButton = {
+    icon: React.ReactNode,
+    action: () => void
+}
+
+export type tCourseCard = {
+    id: string,
+    cover_image: string,
+    alt: string,
+    course_title: string,
+    course_description: string,
+    course_tutor: string,
+    enrolled: boolean,
+    ended: boolean
+}
+
+export type tIndexCards = {
+    icon: React.ReactNode, 
+    noOfContent: number | null, 
+    content: string, 
+    color_no: number
+}
+
+export type tCalendarItem = {
+    day: 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri' | 'Sat' | 'Sun',
+    date: number 
+}
+
+export type tListTaskCard = {
+    id: string | number,
+    task: string,
+    due_date: number
+}

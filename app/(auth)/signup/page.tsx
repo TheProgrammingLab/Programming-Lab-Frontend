@@ -10,8 +10,8 @@ export default function SignupPage () {
         <div className="auth-container">
             <div className="auth-form-container">
                 <div className='auth-form-content'>
-                    <span> Sign up to Nexus </span>
-                    <span> Enter your details to register for Nexus programmimg lab LMS. </span>
+                    <span> Sign up to Programming Lab </span>
+                    <span> Enter your details to register for programmimg lab LMS. </span>
                     <SignupForm />
 
                     <AuthSwitch page='signup' />

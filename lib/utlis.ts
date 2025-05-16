@@ -42,6 +42,14 @@ export function parseDate (arg: number): string {
     return `${day} ${month}, ${parseTime}`
 }
 
+export function parseCurrentDate () {
+    const day = new Date().getUTCDate();
+    const month = MONTHS[new Date().getUTCMonth()];
+    const year = new Date().getFullYear();
+
+    return `${month} ${day} ${year}`
+}
+
 export function taskDueDateProximity (dueDate: number): number {
     const currentDateTimeInDays = Date.now() / (1000 * 60 * 60 * 24);
     const recordedDateTimeinDays = dueDate / (1000 * 60 * 60 * 24);
@@ -55,4 +63,41 @@ export function taskDueDateProximity (dueDate: number): number {
 
     return 2;
 
+}
+
+export function parseTimeFromDate (time: number) {
+    let hrs: string | number = Math.floor(new Date(time).getHours())
+    let mins: string | number  = Math.floor(new Date(time).getMinutes())
+
+    if (hrs < 10) {
+        hrs = `0${hrs}`
+    }
+
+    if (mins < 10) {
+        mins = `0${mins}`
+    }  
+
+    return `${hrs}:${mins}`
+}
+
+function convertNumberToTime (arg: number) {
+    const hrs = arg / (60 * 60)
+    const mins = arg / 60
+    const secs = arg % 60
+
+
+    return `${hrs}:${mins}:${secs}`
+}
+
+export function countdownTimer (startTime: number, setTime: (arg: string) => void) {
+    let timeLeftInSecs = (startTime - Date.now()) / 1000;
+
+
+
+    let interval = setInterval (() => {
+        
+        let result = convertNumberToTime(timeLeftInSecs)
+        
+        setTime(result)
+    }, 1000)
 }

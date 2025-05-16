@@ -273,6 +273,90 @@
     line-height: 1rem;
 }
 
+.reminder-card {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    padding: 16px 24px;
+    background-color: rgba(149, 9, 209, 0.138);
+    border-radius: 6px;
+}
+.reminder-card-image {
+    width: 52px;
+    height: 52px;
+    border-radius: 4px;
+    background-color: grey;
+}
+
+.reminder-card-main {
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+}
+
+.reminder-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.reminder-card-content > span:first-child {
+    font-size: .72rem;
+    font-weight: 600;
+    color: var(--text-2);
+}
+
+.reminder-card-content-course {
+    display: flex;
+    gap: 16px;
+    color: var(--text);
+    font-size: .92rem;
+    font-weight: 700;
+    /* align-items: flex-end; */
+}
+
+.reminder-card-content-course > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    font-size: .6rem;
+    gap: 6px;
+    font-weight: 500;
+
+    span:first-child{
+        height: max-content;
+        display: flex;
+    }
+}
+
+.reminder-card-extra {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.reminder-card-extra > div {
+    font-size: .68rem;
+    /* padding: 8px 28px; */
+    width: 150px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.reminder-card-extra > div:first-child {
+    background-color: var(--primary);
+    color: white;
+}
+
+.reminder-card-extra > div:last-child {
+    color: var(--primary);
+    background-color: white;
+    box-shadow: 0 0 2px rgb(0 , 0 ,0 , .3);
+}
+
 @media screen and (min-width: 1440px ) {
     .dashboard-banner-card { 
         height: 36%;

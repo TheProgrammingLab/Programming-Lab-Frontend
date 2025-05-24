@@ -1,12 +1,12 @@
 "use client"
 import '@/styles/components.dashboard.css'
 import { tSidebaritem } from "@/lib/types";
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 export function SidebarItem ({ label, icon, nav }: tSidebaritem) {
     
     const pathname = usePathname()
-    const router = useRouter()
 
     function stylingCondition () {
         if (pathname == nav) return 'sidebar-active-item';
@@ -16,14 +16,12 @@ export function SidebarItem ({ label, icon, nav }: tSidebaritem) {
         return 'sidebar-item'
     }
 
-    function handleClick () {
-        router.push(nav)
-    }
-
     return (
-        <div className={stylingCondition()} onClick={handleClick}>
-            <span>{icon}</span>
-            <span>{label}</span>
-        </div>
+        <Link href={nav}>
+            <div className={stylingCondition()}>
+                <span>{icon}</span>
+                <span>{label}</span>
+            </div>
+        </Link>
     )
 }

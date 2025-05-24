@@ -1,19 +1,16 @@
 import '@/styles/dashboard.css'
 
 type tComponentParams = {
-    params: {
-        id: string
-    }
+    params: Promise<{ id: string }> 
 }
 
-export default function AssignmentDetailsPage ({ params }: tComponentParams) {
+export default async function AssignmentDetailsPage ({ params }: tComponentParams) {
 
-
-    console.log(params)
+    const {id} = await params
 
     return (
         <main className="dashboard-page">
-            Assignment details - {params.id}
+            Assignment details - {id}
         </main>
     )
 }

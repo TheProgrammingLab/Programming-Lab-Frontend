@@ -6,7 +6,7 @@ import React from 'react'
 export function OtpInput ({ otp, changeHandler }: tOtpInput) {
     
     function handleChange (e: React.ChangeEvent<HTMLInputElement>) {
-        let inputCheck = parseInt(e.target.value)
+        const inputCheck = parseInt(e.target.value)
         
         if (!inputCheck) return;
         changeHandler(inputCheck.toString())

@@ -6,7 +6,7 @@ export function capitalize (arg: string): string {
     
     if (!arg) return '';
 
-    let word = arg.split('')
+    const word = arg.split('')
     word[0] = word[0].toUpperCase();
 
     return word.join('');
@@ -32,14 +32,15 @@ export function parseDate (arg: number): string {
 
     const time = new Date(arg).toLocaleTimeString();
 
-    let parseTime:any = time.split(' ')
-    parseTime[0] = parseTime[0].split(':')
-    parseTime[0].pop()
+    const parseTime:string[]  = time.split(' ') as string[]
+    
+    const parseTimeFirstItem = parseTime[0].split(":")
+    parseTimeFirstItem.pop()
 
-    parseTime[0] = parseTime[0].join(':')
-    parseTime = parseTime.join(':')
+    parseTime[0] = parseTimeFirstItem.join(':')
+    const parseTimeResult = parseTime.join(':')
 
-    return `${day} ${month}, ${parseTime}`
+    return `${day} ${month}, ${parseTimeResult}`
 }
 
 export function parseCurrentDate () {
@@ -90,14 +91,18 @@ function convertNumberToTime (arg: number) {
 }
 
 export function countdownTimer (startTime: number, setTime: (arg: string) => void) {
-    let timeLeftInSecs = (startTime - Date.now()) / 1000;
+    const timeLeftInSecs = (startTime - Date.now()) / 1000;
 
 
 
-    let interval = setInterval (() => {
+    const interval = setInterval (() => {
         
-        let result = convertNumberToTime(timeLeftInSecs)
+        const result = convertNumberToTime(timeLeftInSecs)
         
         setTime(result)
+
+        if (result == "0:0:0" || result == "00:00:00") {
+            clearInterval(interval)
+        }
     }, 1000)
 }

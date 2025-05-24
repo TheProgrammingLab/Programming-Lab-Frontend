@@ -3,14 +3,14 @@ import '@/styles/components.ui.css'
 import { closePopup } from '@/store/enrollPopup'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { BsX } from 'react-icons/bs' 
-import React, { useEffect, useRef, PointerEvent, ReactNode } from 'react'
+import React, { useEffect, useRef, PointerEvent } from 'react'
 
 // Should also contain course title and tutor, so I'll need to define a type
 
 export function EnrollmentPopup () {
     
-    const ref = useRef(document.createElement('div'))
-    const containerRef = useRef(document.createElement('div'))
+    const ref = useRef<HTMLDivElement>(null)
+    const containerRef = useRef<HTMLDivElement>(null)
     const dispatch = useAppDispatch()
     const enrollPopup = useAppSelector(state => state.enrollPopup.value)
 
@@ -18,8 +18,8 @@ export function EnrollmentPopup () {
         dispatch(closePopup())
     }
 
-    const handlePointerDown = (e: PointerEvent): any =>  {
-        if (!containerRef.current.contains(e.target as Node)) {
+    const handlePointerDown = (e: PointerEvent): void =>  {
+        if (!containerRef?.current?.contains(e.target as Node)) {
             return;
         }
 
@@ -31,13 +31,13 @@ export function EnrollmentPopup () {
         const popupContainer = containerRef?.current
 
         if (!popupContainer) return;
-        // @ts-ignore
-        popupContainer?.addEventListener('pointerdown', handlePointerDown)
+        // @ts-expect-error: Expects event handler error
+        popupContainer?.addEventListener('pointerdown', (e: PointerEvent) => handlePointerDown(e))
 
-        //@ts-ignore
+        //@ts-expect-error: Expects event handler error
         return () => popupContainer?.removeEventListener('pointerdown', handlePointerDown)
 
-    }, [])
+    })
 
     return (
         <div className='popups-container'>

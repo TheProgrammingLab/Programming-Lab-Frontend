@@ -1,15 +1,14 @@
 import '@/styles/dashboard.css'
 
 type tCourseContentParams =  {
-    params: {
-        id: string
-    } 
+    params: Promise<{ id: string }> 
 }
 
-export default function CoursesContent ({ params }: tCourseContentParams) {
+export default async function CoursesContent ({ params }: tCourseContentParams) {
+    const { id } = await params;
     return (
         <main className='dashboard-page'>
-            Courses - {params.id}
+            Courses - {id}
         </main>
     )
 }

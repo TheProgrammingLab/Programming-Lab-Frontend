@@ -13,7 +13,7 @@ type tResponseForCourseCardFetch = {
 
 export async function OngoingCourses () {
 
-    let response: tResponseForCourseCardFetch = await fetchOngoingCourses() as tResponseForCourseCardFetch
+    const response: tResponseForCourseCardFetch = await fetchOngoingCourses() as tResponseForCourseCardFetch
     
 
     return (

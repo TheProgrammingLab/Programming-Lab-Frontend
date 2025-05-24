@@ -6,16 +6,16 @@ import React, { useRef } from 'react'
 import { IoIosPerson } from 'react-icons/io'
 import { openPoup } from '@/store/enrollPopup'
 import { useAppDispatch } from '@/store/hooks'
+import Image from 'next/image'
 
 export function CourseCard ({ id, cover_image, alt, course_title, course_description, course_tutor, enrolled, ended }: tCourseCard) {
     
-    // @ts-ignore
-    const ref = useRef(document.createElement('button'))
+    const ref = useRef<HTMLButtonElement>(null)
     const router = useRouter()
     const dispatch = useAppDispatch()
 
     function handleClick (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) {
-        if (ref.current.contains(e.target as Node)) {
+        if (ref?.current?.contains(e.target as Node)) {
             return;
         }
 
@@ -28,7 +28,9 @@ export function CourseCard ({ id, cover_image, alt, course_title, course_descrip
     
     return (
         <div className='course-card' onClick={handleClick}>
-            <div className='course-card-cover-image'></div>
+            <div className='course-card-cover-image'>
+                <Image src={cover_image} alt={alt} />
+            </div>
 
             <div className='course-card-content'>
                 <span>{course_title}</span>
@@ -49,6 +51,9 @@ export function CourseCard ({ id, cover_image, alt, course_title, course_descrip
             {enrolled ? <div className='enrolled-indicator' /> : ''}
             {enrolled ? 'Enrolled' : 'Enroll'}
         </button>
+
+        {/* For compiler - change later */}
+        {ended ? '' : ''}
 
         </div>
     )

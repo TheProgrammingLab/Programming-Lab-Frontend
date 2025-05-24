@@ -41,7 +41,7 @@ export function Topbar () {
 
             <div className='dasboard-topbar-nav'>
                 <div className='dashboard-topbar-search'>
-                    <Searchbar value={search} handleChange={setSearch} handleClick={runSearch} placeholder='Search Courses' />
+                    <Searchbar value={search} handleChange={searchHandler} handleClick={runSearch} placeholder='Search Courses' />
                 </div>
 
                 <IconButton icon={<BsBell /> } action={notifications} />

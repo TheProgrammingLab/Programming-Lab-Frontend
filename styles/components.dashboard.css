@@ -279,7 +279,7 @@
     gap: 12px;
     padding: 16px 24px;
     background-color: rgba(149, 9, 209, 0.138);
-    border-radius: 6px;
+    border-radius: 12px;
 }
 .reminder-card-image {
     width: 52px;
@@ -355,6 +355,82 @@
     color: var(--primary);
     background-color: white;
     box-shadow: 0 0 2px rgb(0 , 0 ,0 , .3);
+}
+
+
+.courses-page-main-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.courses-page-main-header > span:first-child {
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.courses-page-main-header-filter {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    font-size: .72rem;
+    font-weight: 500;
+    color: var(--text);
+    border-bottom: 1px solid rgb(0 , 0 ,0 , .3);
+}
+
+.courses-page-main-header-filter > span {
+    min-width: 72px;
+    padding: 1px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.course-list-filter {
+    border-bottom: 2px solid var(--primary);
+}
+
+.course-list-container {
+    width: 100%;
+    height: inherit;
+    padding-top: 12px;
+    max-height: 100%;
+    overflow: auto;
+}
+
+.course-list-container::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+}
+
+.course-list-container::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.course-list-carousel {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    min-height: 100%;
+}
+
+.no-course {
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    translate: 0 -50%;
+    text-align: center;
+    font-size: clamp(.72rem, .88vw, .8rem);
+    font-weight: 600;
+    color: var(--text-2);
 }
 
 @media screen and (min-width: 1440px ) {

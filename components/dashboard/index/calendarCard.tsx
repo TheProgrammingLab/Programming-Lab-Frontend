@@ -1,7 +1,6 @@
 'use client'
 import { tCalendarItem } from '@/lib/types'
 import '@/styles/dashboard.css'
-import { useState } from 'react'
 
 
 type dayType = 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri' | 'Sat' | 'Sun'
@@ -13,9 +12,9 @@ const DAYS: dayType[] = [
 function CalendarCardItem ({ day, date=0 }: tCalendarItem) {
     
     function returnDate () {
-        let day = new Date().getDate()
+        const day = new Date().getDate()
 
-        let dayIndex = new Date().getDay()
+        const dayIndex = new Date().getDay()
 
         
 
@@ -39,16 +38,6 @@ function CalendarCardItem ({ day, date=0 }: tCalendarItem) {
 
 export function CalendarCard () {
     
-    const [ selected, setSelected ] = useState<boolean | number>(false)
-    const [ date, setDate ] = useState<string | number>('This Week')
-
-    function closeSelected () {
-        setSelected(false)
-    }
-
-    function handleClick (arg: number) {
-        setSelected(arg)
-    }
 
     return (
         <div className='dashboard-profile-calendar-card'>
@@ -57,6 +46,7 @@ export function CalendarCard () {
                     <CalendarCardItem key={index} day={day} date={index} />
                 ))
             }
+
         </div>
     )
 }

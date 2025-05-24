@@ -3,6 +3,7 @@ import { tCourseCard } from "@/lib/types"
 import { parseTimeFromDate } from "@/lib/utlis"
 import { IoIosPerson } from "react-icons/io"
 import '@/styles/components.dashboard.css'
+import Image from "next/image"
 
 type tReminderCard = Pick<tCourseCard, 'course_title' | 'course_tutor' | 'cover_image' | 'id' | 'alt' > & {
     startTime: number
@@ -11,7 +12,9 @@ type tReminderCard = Pick<tCourseCard, 'course_title' | 'course_tutor' | 'cover_
 export function ReminderCard ({ course_title, course_tutor, cover_image, id, alt, startTime }: tReminderCard) {
     return (
         <div className='reminder-card'>
-            <div className='reminder-card-image'></div>
+            <div className='reminder-card-image'>
+                <Image src={cover_image} alt={alt} />
+            </div>
 
             <div className="reminder-card-main">
                 <div className="reminder-card-content">
@@ -31,6 +34,8 @@ export function ReminderCard ({ course_title, course_tutor, cover_image, id, alt
                     <div>{`00:00:00`}</div>
                 </div>
             </div>
+            
+            {id ? '' : ''}
         </div>
     )
 }

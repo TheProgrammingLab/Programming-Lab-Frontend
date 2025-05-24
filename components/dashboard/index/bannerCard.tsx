@@ -1,13 +1,9 @@
-"use client"
 import '@/styles/components.dashboard.css'
 import { SmallButton } from "@/components/ui/SmallButton"
-import { useRouter } from "next/navigation"
 import bannerImage from '@/public/image/dashboardimage.png'
 import Image from 'next/image'
 
 export function BannerCard () {
-
-    const router = useRouter()
 
     return (
         <div className='dashboard-banner-card'>

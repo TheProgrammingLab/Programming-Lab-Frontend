@@ -1,6 +1,7 @@
 import { Sidebar } from "@/components/sidebar";
 import '@/styles/dashboard.css'
 import React from "react";
+import { Popups } from './popups'
 
 export default function DashboardLayout({
     children,
@@ -14,6 +15,8 @@ export default function DashboardLayout({
             <div className="dashboard-content">
                 {children}
             </div>
+
+            <Popups />
         </div>
     )
 }

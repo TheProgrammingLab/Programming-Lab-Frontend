@@ -10,7 +10,7 @@ export function AuthSwitch ({ page }: tAuthSwitch) {
 
     if ( page === 'login' ) {
         return (
-            <div onClick={() => router.push('/signup')} className="auth-switch">Don't have an account? <span>Sign Up.</span> </div>
+            <div onClick={() => router.push('/signup')} className="auth-switch">Dont have an account? <span>Sign Up.</span> </div>
         )
     } else {
         return (
@@ -30,7 +30,7 @@ export function AuthRoleSwitch ({ page, currentRole, switchRole }: tAuthSwitchRo
             
             <div 
                 className={compareToAssignClass(currentRole, 'Tutor') ? "role-switch-active" : "" }
-                onClick={() => switchRole('tutor')}
+                onClick={() => switchRole("tutor")}
                 >{capitalize(page)} as Tutor</div>
         </div>
     )

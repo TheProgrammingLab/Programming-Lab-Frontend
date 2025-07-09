@@ -97,7 +97,7 @@ function SignupForm () {
                     <Button label="Sign Up" loading={loading} />
 
                     <span onClick={() => navigate("/login")}>
-                        Already have an Account? Signup
+                        Already have an Account? Login
                     </span>
                 </form>
 

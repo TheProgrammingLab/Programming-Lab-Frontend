@@ -1,8 +1,8 @@
-import "../../styles/_components.css"
+import "../../../styles/courses.css"
 import { GoStack } from "react-icons/go"
 import { CiCalendarDate } from "react-icons/ci"
 import logo from "/images/logo.webp"
-import { parseDate } from "../../utils/functions"
+import { parseDate } from "../../../utils/functions"
 
 type T_CourseCard = {
     thumbnail: string

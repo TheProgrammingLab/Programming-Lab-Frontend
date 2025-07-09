@@ -167,7 +167,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 24px;
+    margin-top: 48px;
 }
 
 .landing-page-banner-left-extra-cnt {
@@ -179,12 +179,12 @@
 
 .landing-page-banner-left-extra-cnt > span:first-child {
     color: var(--secondary);
-    font-size: clamp(1rem, 1.8vw, 1.48rem);
+    font-size: clamp(1.12rem, 2vw, 1.72rem);
     font-weight: 600;
 }
 
 .landing-page-banner-left-extra-cnt > span:last-child {
-    font-size: clamp(.5rem, .8vw, .6rem);
+    font-size: clamp(.66rem, .84vw, .72rem);
 }
 
 .landing-page-banner-right {

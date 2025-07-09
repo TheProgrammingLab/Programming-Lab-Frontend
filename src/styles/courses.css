@@ -1,9 +1,13 @@
+.courses {
+
+}
+
 .course-card {
     width: 100%;
-    height: 288px;
-    /* background: #d5d5d5; */
+    height: 222px;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
     border-radius: 4px;
     overflow: hidden;
     box-shadow:  0 0 3px rgba(167, 167, 167, 0.594);
@@ -12,7 +16,8 @@
 .course-card-thumbnail,
 .thumbnail-placeholder {
     width: 100%;
-    height: 180px;
+    height: 138px;
+    /* height: 60%; */
     background-color: #8d8c8c;
     overflow: hidden;
 }
@@ -28,6 +33,7 @@
 .thumbnail-placeholder {
     background-color: #7e3838c3;
     display: flex;
+    height: 100%;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -56,10 +62,10 @@
 
 .course-card-details {
     width: 100%;
-    height: calc(100% - 180px);
+    height: calc(100% - 138px);
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
     padding: 8px 16px;
 }
 
@@ -75,10 +81,10 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     line-clamp: 2;
-    height: 38px;
+    height: 22px;
 }
 
-.course-card-details-btm {
+.course-card-details-middle {
     display: flex;
     width: 100%;
     font-size: .6rem;
@@ -86,7 +92,7 @@
     align-items: center;
 }
 
-.course-card-details-btm > div {
+.course-card-details-middle > div {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -147,67 +153,5 @@
 
     50% {
         filter: brightness(80%);
-    }
-}
-
-.message-queue {
-    width: 100%;
-    height: fit-content;
-    max-height: 100vh;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    padding: 12px 20px;
-    z-index: 10;
-    gap: 12px;
-}
-
-.message {
-    height: 40px;
-    background-color: var(--background);
-    box-shadow: 0 0 2px rgb(102, 102, 102, .4);
-    width: 40%;
-    min-width: 320px;
-    position: relative;
-    border-radius: 4px;
-    overflow: hidden;
-    font-size: .72rem;
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
-    text-transform: capitalize;
-}
-
-.message-failed,
-.message-passed,
-.message-warning {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-
-    animation: load 1.2s linear;
-}
-
-.message-failed {
-    background-color: rgb(228, 85, 85);
-}
-
-.message-passed {
-    background-color: rgb(69, 214, 69);
-}
-
-.message-warning {
-    background-color: rgb(211, 152, 41);
-}
-
-@keyframes load {
-    from {
-        width: 0%;
-    }
-
-    to {
-        width: 100%;
     }
 }

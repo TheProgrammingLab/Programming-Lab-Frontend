@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import { fetchGraphData } from "../../api"
 import { useAppDispatch } from "../../redux/hooks"
 import { addMessage } from "../../redux/features/message"
+import { CourseCard } from "../../components/dashboard/courses"
 
 export default function Page () {
 
@@ -54,6 +55,18 @@ export default function Page () {
                 </div>
 
                 <TopCourses />
+            </div>
+
+            <div className="dashboard-index-btm">
+                <h2>Recommended Courses</h2>
+
+                <div className="dashboard-index-btm-cnt">
+                    <CourseCard thumbnail={""} niche={"test"} title={"title"} modules={0} date={0} />
+                    <CourseCard thumbnail={""} niche={"test"} title={"title"} modules={0} date={0} />
+                    <CourseCard thumbnail={""} niche={"test"} title={"title"} modules={0} date={0} />
+                    <CourseCard thumbnail={""} niche={"test"} title={"title"} modules={0} date={0} />
+                    <CourseCard thumbnail={""} niche={"test"} title={"title"} modules={0} date={0} />
+                </div>
             </div>
         </div>
     )

@@ -42,5 +42,8 @@ html, body, #root {
   overflow: hidden;
 }
 
+img {
+  pointer-events: none;
+}
 
 @media screen and (max-width: 600px) {}

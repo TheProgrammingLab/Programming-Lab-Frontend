@@ -59,6 +59,7 @@ export function Sidebar() {
         if (pathname.includes("/lms/community") && arg == 'community') return "nav-item active";
         if (pathname.includes("/lms/students") && arg == 'students') return "nav-item active";
         if (pathname.includes("/lms/analytics") && arg == 'analytics') return "nav-item active";
+        if (pathname.includes("/lms/games") && arg == 'games') return "nav-item active";
         return "nav-item"
     }
  

@@ -284,14 +284,6 @@
 }
 
 
-.dashboard-index-middle {
-    width: 100%;
-    height: 32%;
-    min-height: 200px;
-    display: flex;
-    justify-content: space-between;
-}
-
 .dashboard-index-chart {
     width: 65%;
     height: 100%;

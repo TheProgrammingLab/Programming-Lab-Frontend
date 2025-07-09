@@ -1,0 +1,22 @@
+.landing-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* height: fit-content; */
+    background-color: var(--background);
+    padding-top: 60px;
+}
+
+.landing-page-home,
+.landing-page-courses {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.landing-page-courses {
+    width: 100%;
+}

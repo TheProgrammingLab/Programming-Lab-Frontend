@@ -1,0 +1,7 @@
+export * from "./Banner"
+export * from "./LanguageSlide"
+export * from "./OurOffer"
+export * from "./About"
+export * from "./Testimonial"
+export * from "./Courses"
+export * from "./Footer"

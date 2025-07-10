@@ -3,6 +3,10 @@ import { RoleCheckbox, InputFields, Button } from "../../components/auth"
 import "../../styles/auth.css"
 import { Wrapper } from "./AuthWrapper"
 import { useNavigate } from "react-router-dom"
+import { useAppDispatch } from "../../redux/hooks"
+import { fetchUserProfile } from "../../api"
+import { addMessage } from "../../redux/features/message"
+import { setUser } from "../../redux/features/user"
 
 type LoginData = {
     role: "student" | "tutor" | ""
@@ -19,6 +23,8 @@ function LoginForm () {
     })
     const [ passwordState, setPasswordState ] = useState<"password" | "text">("password")
     const [ loading, setLoading ] = useState<boolean>(false)
+
+    const dispatch = useAppDispatch()
 
     const navigate = useNavigate()
 
@@ -40,14 +46,29 @@ function LoginForm () {
         }
     }
     
-    function handleSubmit (e: React.FormEvent<HTMLFormElement>) {
+    async function handleSubmit (e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
 
         if (!login.loginId || !login.password || !login.role) {
             return;
         }
-
         setLoading(true)
+        
+        const response = await fetchUserProfile(login.role);
+        setLoading(false)
+        
+        if (response.status != 200) {
+            dispatch(addMessage({ type: "failed", label: response.error as string}))    
+            return;
+        }
+
+        if (response.status == 200) {
+            dispatch(addMessage({ type: "passed", label: "Login Successful"}))    
+            dispatch(setUser({ ...response.data }))
+            navigate('/lms')
+        }
+
+        
     }
 
     return (

@@ -1,5 +1,100 @@
-.courses {
+.courses-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
+.courses-page-hdr {
+    width: 100%;
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.courses-page-hdr-filter {
+    font-size: .54rem;
+    font-weight: 400;
+    display: flex;
+    gap: 1.2rem;
+}
+
+.filter-item,
+.active-filter-item {
+    padding: 4px 20px;
+    cursor: pointer;
+    border: 1px solid rgb(122, 122, 122);
+    border-radius: 20px;
+    text-transform: capitalize;
+}
+
+.active-filter-item {
+    background-color: #c58b8b;
+    color: var(--secondary);
+    font-weight: 500;
+    border-color: var(--secondary);
+}
+
+.add-course-btn {
+    width: 140px;
+    height: 100%;
+    border: none;
+    background-color: var(--secondary);
+    color: white;
+    font-size: .6rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.courses-grid-container {
+    width: 100%;
+    height: calc(100% - 44px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+}
+
+.courses-grid-inner {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+    height: fit-content;
+}
+
+.sentinelRef {
+    width: 100%;
+    height: 1px;
+}
+
+.bottom-loader {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6px;
+}
+
+.bottom-loader > div {
+    width: 24px;
+    height: 24px;
+    border: 4px solid #c58b8b;
+    border-top-color: var(--secondary);
+    border-radius: 50%;
+    animation: spin .6s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .course-card {

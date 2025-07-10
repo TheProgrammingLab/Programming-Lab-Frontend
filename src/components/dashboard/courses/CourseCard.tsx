@@ -1,4 +1,4 @@
-import "../../../styles/courses.css"
+import "../../../styles/dashboard_courses.css"
 import { GoStack } from "react-icons/go"
 import { CiCalendarDate } from "react-icons/ci"
 import logo from "/images/logo.webp"

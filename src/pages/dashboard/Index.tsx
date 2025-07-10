@@ -1,4 +1,4 @@
-import "../../styles/dashboard.css"
+import "../../styles/dashboard_index.css"
 import { Card, Chart, ChartLoading, TopCourses } from "../../components/dashboard/overview"
 import { IoBookOutline } from "react-icons/io5"
 import { GoPeople, GoTasklist } from "react-icons/go"

@@ -1,6 +1,7 @@
 import { I_Response } from "../utils/types"
 import { 
     AllCourses, 
+    CourseData, 
     Courses, 
     GraphData, 
     StudentProfile, 
@@ -60,3 +61,14 @@ export function fetchCourses (id: number, count: number): Promise<I_Response> {
         }, 3000)
     })
 } 
+
+export function fetchCourseContent (): Promise<I_Response> {
+   return new Promise((resolve, _) => {
+        setTimeout(() => {
+            resolve({ 
+                status: 200, 
+                data: CourseData 
+            })
+        }, 3000)
+    }) 
+}

@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { Sidebar, Topbar } from "../../components/dashboard"
 import Index from "./Index"
 import Courses from "./Courses"
+import CourseContent from "./CourseContent"
 import { useEffect } from "react";
 
 export default function Layout () {
@@ -24,7 +25,8 @@ export default function Layout () {
                 <div className="dashboard-main-cnt">
                     <Routes>
                         <Route index element={<Index /> } />
-                        <Route path="/courses/*" element={<Courses /> } />
+                        <Route path="/courses" element={<Courses /> } />
+                        <Route path="/courses/:id" element={<CourseContent /> } />
                     </Routes>
                 </div>
             </div>

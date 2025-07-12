@@ -1,11 +1,12 @@
 import "../../../styles/dashboard_courses.css"
 import { useSearchParams } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks"
-import { useCallback, useEffect, useState } from "react"
+import { useCallback,  useState } from "react"
 import { CourseCard } from "./CourseCard"
 import { fetchCourses } from "../../../api"
 import { addCourses, setCourses } from "../../../redux/features/courses"
 import { useInfiniteScroll } from "../../../hooks"
+// import { I_CourseCard } from "../../../utils/types"
 
 
 
@@ -22,8 +23,14 @@ export function CourseGrid () {
     const filter = searchParams.get('filter')
 
 
-    function handleFilter () {
-        if (!filter) return;
+    function handleFilter (arg: any[]) {
+        if (!filter) return arg;
+
+        const result = arg.filter((item) =>  { 
+            if (item.state.includes(filter as string)) return item;
+        })
+
+        return result;
     }
 
     async function getCoursesOnLoad () {
@@ -73,27 +80,18 @@ export function CourseGrid () {
     const sentinelRef = useInfiniteScroll(infinitScrollFunc, hasMore, loading)
 
 
-    useEffect(() => {
-        handleFilter()
-    }, [filter])
-
-    useEffect(() => {
-        // console.log(coursesData)
-        // console.log(hasMore)
-    }, [coursesData])
-
     return (
         <div className="courses-grid-container">
             <div className="courses-grid-inner">
                 {
-                    coursesData.courses.map((course, index) => (
-                        <CourseCard key={index} thumbnail={course.thumbnail} niche={course.niche} title={course.title} modules={0} date={0} />
+                    handleFilter(coursesData.courses).map((course, index) => (
+                        <CourseCard key={index} slug={course.slug} thumbnail={course.thumbnail} niche={course.niche} title={course.title} modules={0} date={0} />
                     ))
                 }
             </div>
 
             {
-                loading
+                loading && hasMore
                 ?
                 <div className="bottom-loader">
                     <div />

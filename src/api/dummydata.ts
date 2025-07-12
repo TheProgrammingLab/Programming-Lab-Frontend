@@ -1,3 +1,5 @@
+import { LoremIpsum } from "../utils/functions"
+
 export const TutorProfile = {
     id: "0xb78293fa",
     username: "Gojo Satoru",
@@ -105,9 +107,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing", "enrolled"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -117,9 +119,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing", "enrolled"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -129,9 +131,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing", "enrolled"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -141,9 +143,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing", "enrolled"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -153,9 +155,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing", "enrolled"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -165,9 +167,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing", "enrolled"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -177,9 +179,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing", "enrolled"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -189,9 +191,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing", "enrolled"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -201,9 +203,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -213,9 +215,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -225,9 +227,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["completed", "enrolled"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -237,9 +239,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["completed", "enrolled"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -249,9 +251,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["completed", "enrolled"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -261,9 +263,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["completed", "enrolled"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -273,9 +275,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["completed", "enrolled"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -285,9 +287,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -297,9 +299,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -309,9 +311,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -321,9 +323,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -333,9 +335,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -345,9 +347,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -357,9 +359,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -369,9 +371,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -381,9 +383,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -393,9 +395,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -405,9 +407,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -417,9 +419,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -429,9 +431,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -441,9 +443,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -453,9 +455,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -465,9 +467,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -477,9 +479,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -489,9 +491,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -501,9 +503,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -513,9 +515,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -525,9 +527,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -537,9 +539,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -549,9 +551,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -561,9 +563,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -573,9 +575,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -585,9 +587,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -597,9 +599,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -609,9 +611,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -621,9 +623,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -633,9 +635,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -645,9 +647,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -657,9 +659,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -669,9 +671,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -681,9 +683,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -693,9 +695,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -705,9 +707,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -717,9 +719,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -729,9 +731,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -741,9 +743,9 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
@@ -753,11 +755,130 @@ export const AllCourses = [
         description: "Course Description",
         thumbnail: "",
         tutor: "teet",
-        slug: "",
+        slug: "slugified-title...",
         createdAt: Date.now(),
-        state: "ongoing",
+        state: ["ongoing"],
         niche: "Frontend Development", 
         title: "React For Absolute Beginners", 
         modules: 20
     }
 ]
+
+export const CourseData = {
+    niche: "Frontend",
+    title: "React for absolute beginners",
+    description: LoremIpsum(),
+    thumbnail: "",
+    tutor: "Sensei Jiraiya",
+    enrolled: true,
+    ongoing: true,
+    modules: [
+        {
+            topic: "Overview",
+            content: [
+                {
+                    title: "Introduction",
+                    scheduledDate: 1751612880119,
+                    done: true
+                },
+                {
+                    title: "What is React",
+                    scheduledDate: 1751612880119,
+                    done: true
+                },
+                {
+                    title: "How React Works",
+                    scheduledDate: 1751612880119,
+                    done: true
+                },
+            ]
+        },
+        {
+            topic: "React Components",
+            content: [
+                {
+                    title: "Introduction to React Function Components",
+                    scheduledDate: 1752995428495,
+                    done: false
+                },
+                {
+                    title: "How Function Components Work",
+                    scheduledDate: 1752995428495,
+                    done: false
+                },
+                {
+                    title: "Brief of Class Component",
+                    scheduledDate: 1752995428495,
+                    done: false
+                },
+            ]
+        },
+        {
+            topic: "React Hooks 1",
+            content: [
+                {
+                    title: "Hooks and their functionality",
+                    scheduledDate: 0,
+                    done: false
+                },
+                {
+                    title: "UseState Hook",
+                    scheduledDate: 0,
+                    done: false
+                },
+                {
+                    title: "UseRef Hook",
+                    scheduledDate: 0,
+                    done: false
+                },
+                {
+                    title: "UseReducer Hook",
+                    scheduledDate: 0,
+                    done: false
+                }
+            ]
+        },
+
+        {
+            topic: "React Hooks 2",
+            content: [
+                {
+                    title: "Context Api",
+                    scheduledDate: 0,
+                    done: false
+                },
+                {
+                    title: "UseContent Hook",
+                    scheduledDate: 0,
+                    done: false
+                }
+            ]
+        },
+        {
+            topic: "React Hooks 4",
+            content: [
+                {
+                    title: "UseMemo Hook",
+                    scheduledDate: 0,
+                    done: false
+                },
+                {
+                    title: "UseCallback Hook",
+                    scheduledDate: 0,
+                    done: false
+                }
+            ]
+        },
+        {
+            topic: "React Hooks 4",
+            content: [
+                {
+                    title: "Custom Hooks",
+                    scheduledDate: 0,
+                    done: false
+                }
+            ]
+        }
+
+    ]
+}

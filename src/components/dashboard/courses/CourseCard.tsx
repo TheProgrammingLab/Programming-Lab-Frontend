@@ -3,6 +3,8 @@ import { GoStack } from "react-icons/go"
 import { CiCalendarDate } from "react-icons/ci"
 import logo from "/images/logo.webp"
 import { parseDate } from "../../../utils/functions"
+import { useNavigate } from "react-router-dom"
+
 
 type T_CourseCard = {
     thumbnail: string
@@ -10,11 +12,12 @@ type T_CourseCard = {
     title: string
     modules: number
     date: number
+    slug: string
 }
 
-function CourseThumbnail ({ thumbnail, loading=false }: { thumbnail: string, loading?: boolean }) {
+export function CourseThumbnail ({ thumbnail, loading=false, extra_class='' }: { thumbnail: string, loading?: boolean , extra_class?: string}) {
     return (
-        <div className={"course-card-thumbnail"}>
+        <div className={`course-card-thumbnail ${extra_class}`}>
             {
                 thumbnail
                 ?
@@ -28,9 +31,16 @@ function CourseThumbnail ({ thumbnail, loading=false }: { thumbnail: string, loa
     )
 }
 
-export function CourseCard ({ thumbnail, niche, title, modules, date }: T_CourseCard) {
+export function CourseCard ({ slug, thumbnail, niche, title, modules, date }: T_CourseCard) {
+
+    const navigate = useNavigate()
+    
+    function handleClick () {
+        navigate(`/lms/courses/${slug}`)
+    }
+
     return (
-        <div className="course-card">
+        <div className="course-card" onClick={handleClick}>
             <CourseThumbnail thumbnail={thumbnail} />
 
             <div className="course-card-details">

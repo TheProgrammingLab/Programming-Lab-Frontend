@@ -43,3 +43,18 @@ export function parseCurrentDate () {
 
     return `${month} ${day} ${year}`
 }
+
+export function makePastDate (arg: number): string {
+    // arg = No of Days
+
+    const milliseconds = arg * 24 * 60 * 60 * 1000
+    
+    const date = new Date(Date.now() - milliseconds)
+
+    const day = date.getUTCDate();
+    const month = MONTHS[date.getUTCMonth()];
+
+    const year = date.getFullYear();
+
+    return `${day} ${month}, ${year}`
+}

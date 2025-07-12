@@ -61,11 +61,11 @@ export default function Page () {
                 <h2>Recommended Courses</h2>
 
                 <div className="dashboard-index-btm-cnt">
-                    <CourseCard thumbnail={""} niche={"test"} title={"title"} modules={0} date={0} />
-                    <CourseCard thumbnail={""} niche={"test"} title={"title"} modules={0} date={0} />
-                    <CourseCard thumbnail={""} niche={"test"} title={"title"} modules={0} date={0} />
-                    <CourseCard thumbnail={""} niche={"test"} title={"title"} modules={0} date={0} />
-                    <CourseCard thumbnail={""} niche={"test"} title={"title"} modules={0} date={0} />
+                    <CourseCard thumbnail={""} niche={"test"} title={"title"} modules={0} date={0} slug="slugged-title" />
+                    <CourseCard thumbnail={""} niche={"test"} title={"title"} modules={0} date={0} slug="slugged-title" />
+                    <CourseCard thumbnail={""} niche={"test"} title={"title"} modules={0} date={0} slug="slugged-title" />
+                    <CourseCard thumbnail={""} niche={"test"} title={"title"} modules={0} date={0} slug="slugged-title" />
+                    <CourseCard thumbnail={""} niche={"test"} title={"title"} modules={0} date={0} slug="slugged-title" />
                 </div>
             </div>
         </div>

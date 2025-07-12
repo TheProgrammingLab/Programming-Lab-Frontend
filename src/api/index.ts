@@ -1,1 +1,1 @@
-export * from "./testdata"
+export * from "./testapi"

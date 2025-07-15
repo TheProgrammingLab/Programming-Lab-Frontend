@@ -58,3 +58,18 @@ export function makePastDate (arg: number): string {
 
     return `${day} ${month}, ${year}`
 }
+
+
+export function parseTimeFromDate (arg: Date): string {
+    const time = new Date(arg).toLocaleTimeString();
+
+    const parseTime:string[]  = time.split(' ') as string[]
+    
+    const parseTimeFirstItem = parseTime[0].split(":")
+    parseTimeFirstItem.pop()
+
+    parseTime[0] = parseTimeFirstItem.join(':')
+    const parseTimeResult = parseTime.join(':')
+
+    return parseTimeResult
+}

@@ -4,6 +4,7 @@ import { Sidebar, Topbar } from "../../components/dashboard"
 import Index from "./Index"
 import Courses from "./Courses"
 import CourseContent from "./CourseContent"
+import Calendar from "./Calendar"
 import { useEffect } from "react";
 
 export default function Layout () {
@@ -27,6 +28,7 @@ export default function Layout () {
                         <Route index element={<Index /> } />
                         <Route path="/courses" element={<Courses /> } />
                         <Route path="/courses/:id" element={<CourseContent /> } />
+                        <Route path="/calendar" element={<Calendar />} />
                     </Routes>
                 </div>
             </div>

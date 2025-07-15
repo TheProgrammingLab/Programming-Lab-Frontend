@@ -6,7 +6,8 @@ import {
     GraphData, 
     StudentProfile, 
     TopCourses, 
-    TutorProfile 
+    TutorProfile,
+    CalendarEvents 
 } from "./dummydata"
 
 
@@ -71,4 +72,15 @@ export function fetchCourseContent (): Promise<I_Response> {
             })
         }, 3000)
     }) 
+}
+
+export function fetchCalenderEvents (): Promise<I_Response> {
+   return new Promise((resolve, _) => {
+        setTimeout(() => {
+            resolve({ 
+                status: 200, 
+                data: CalendarEvents 
+            })
+        }, 2000)
+    })
 }

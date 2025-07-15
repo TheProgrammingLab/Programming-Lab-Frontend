@@ -1,4 +1,4 @@
-import { LoremIpsum } from "../utils/functions"
+import { generateRandomColor, LoremIpsum } from "../utils/functions"
 
 export const TutorProfile = {
     id: "0xb78293fa",
@@ -882,3 +882,27 @@ export const CourseData = {
 
     ]
 }
+
+export const CalendarEvents = [
+    {
+        title: "React Class 0",
+        start: new Date(2025, 6, 12, 10, 0, 0),
+        end: new Date(2025, 6, 12, 20, 0, 0),
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        color: generateRandomColor()
+    },
+    {
+        title: "React Class",
+        start: new Date(2025, 6, 16, 10, 0, 0),
+        end: new Date(2025, 6, 17, 12, 0, 0),
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        color: generateRandomColor()
+    },
+    {
+        title: "React Class 2",
+        start: new Date(2025, 6, 18, 10, 0, 0),
+        end: new Date(2025, 6, 18, 20, 0, 0),
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        color: generateRandomColor()
+    }
+]

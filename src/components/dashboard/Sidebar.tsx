@@ -6,6 +6,7 @@ import { IoCalendar } from "react-icons/io5";
 import { RiUserCommunityFill } from "react-icons/ri";
 import { PiStudentFill } from "react-icons/pi";
 import { IoAnalytics, IoGameController } from "react-icons/io5";
+import { MdNotifications } from "react-icons/md"
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAppSelector } from "../../redux/hooks";
@@ -19,6 +20,7 @@ const _NavigationItems = [
     { id: 'tasks', label: 'Tasks', icon: <MdAssignment /> },
     { id: 'community', label: 'Community', icon: <RiUserCommunityFill /> },
     { id: 'games', label: 'Games', icon: <IoGameController /> },
+    { id: 'notifications', label: 'Notifications', icon: <MdNotifications /> }
 ]
 
 const TutorExtraNavigationItem = [
@@ -60,6 +62,7 @@ export function Sidebar() {
         if (pathname.includes("/lms/students") && arg == 'students') return "nav-item active";
         if (pathname.includes("/lms/analytics") && arg == 'analytics') return "nav-item active";
         if (pathname.includes("/lms/games") && arg == 'games') return "nav-item active";
+        if (pathname.includes("/lms/notifications") && arg == 'notifications') return "nav-item active";
         return "nav-item"
     }
  

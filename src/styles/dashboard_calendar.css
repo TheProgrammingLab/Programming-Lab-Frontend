@@ -47,9 +47,19 @@
 }
 
 
-
 .rbc-row-content {
-    z-index: none !important;
+    z-index: 0 !important;
+    /* background-color: red; */
+}
+
+.rbc-date-cell {
+    /* background-color: blue; */
+    z-index: 1 !important;
+}
+
+.rbc-row-segment {
+    /* background-color: green; */
+    z-index: 10 !important;
 }
 
 .calendar-custom-event {

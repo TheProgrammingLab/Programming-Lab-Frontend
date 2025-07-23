@@ -192,9 +192,13 @@
     height: 38px;
     font-size: .72rem;
     border-radius: 4px;
-    box-shadow:  0 0 2px rgb(60, 60,60, .2);
+    box-shadow:  0 0 2px rgba(60, 60, 60, 0.438);
     padding: 0 16px;
     outline: none;
+}
+
+.searchbar-input > input:focus {
+    box-shadow: 0 0 2px #c58b8b;
 }
 
 .searchbar-input > input::placeholder {
@@ -219,6 +223,21 @@
 
 .searchbar-result {
     position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 5;
+    top: 115%;
+    border-radius: 6px;
+    min-height: 120px;
+    background-color: rgb(255, 255, 255);
+    box-shadow:  0 0 2px rgba(60, 60, 60, 0.438);
+}
+
+.searchbar-result .bottom-loader {
+    top: 50%;
+    position: absolute;
+    translate: 0 -60%;
+    opacity: .8;
 }
 
 .overview-card {
@@ -293,6 +312,10 @@
     font-family: TitilliumWeb;
     font-weight: 600;
     font-size: .66rem;
+}
+
+.recharts-surface {
+    outline: none !important;
 }
 
 .overview-chart,

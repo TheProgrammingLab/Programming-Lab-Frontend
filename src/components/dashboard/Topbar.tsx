@@ -1,32 +1,83 @@
 import { useLocation, useNavigate } from "react-router-dom"
 import "../../styles/dashboard.component.css"
 import { MdNotifications } from "react-icons/md"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { BsSearch } from "react-icons/bs"
 
 function SearchBar () {
     
     const [ search, setSearch ] = useState<string>("")
+    const [ searchActivated, setSearchActivated ] = useState<boolean>(false)
+    const [ searchResult, setSearchResult ] = useState<any[]>([])
+
+    const ref = useRef<HTMLDivElement>(null)
 
     function handleChange (e: React.ChangeEvent<HTMLInputElement>) {
         setSearch(e.target.value)
+
+        if (searchActivated) setSearchActivated(false);
     }
 
+    function handleSearch () {
+        if (!search) return;
+        setSearchActivated(true)
+
+        setSearchResult([])
+    }
+
+    function containerBlurFunc (e: React.PointerEvent<HTMLElement | HTMLDivElement>) {
+        if (!ref.current) return;
+
+        if (!ref.current.contains(e.target as Node)) {
+            setSearchActivated(false)
+        }
+        
+
+    }
+
+    function handleContainerBlur () {
+        const app = document.querySelector('.app')
+        if (!app) return;
+
+        app.addEventListener('pointerdown', containerBlurFunc as unknown as EventListenerOrEventListenerObject)
+        
+        return () => app.removeEventListener('pointerdown', containerBlurFunc as unknown as EventListenerOrEventListenerObject)
+    }
+
+    useEffect(() => {
+        handleContainerBlur()
+    }, [])
+
     return (
-        <div className="searchbar">
+        <div className="searchbar" ref={ref}>
             <div className="searchbar-input">
                 <input type="text" value={search} onChange={handleChange} placeholder="Search for Courses"  />
-                <span className="search-icon">
+                
+                <span className="search-icon" onClick={handleSearch}>
                     <BsSearch />
                 </span>
             </div>
 
-            <div className="searchbar-result"></div>
+            {
+                searchActivated &&
+                <div className="searchbar-result">
+                    {
+                        !searchResult[0]
+                        ?
+                        <div className="bottom-loader">
+                            <div />
+                        </div>
+                        :
+                        <></>
+                    }
+                </div>
+            }
         </div>
     )
 }
 
 export function Topbar() {
+    const [ hasNotification ] = useState<boolean>(false)
     const { pathname } = useLocation()
     const navigate = useNavigate()
 
@@ -89,7 +140,7 @@ export function Topbar() {
 
     function checkForNotification (): string {
         // create the notification checker
-        if (!true) return "topbar-notification-ringing"
+        if (hasNotification) return "topbar-notification-ringing"
         return "topbar-notification"
     }
 

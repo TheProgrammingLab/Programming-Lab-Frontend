@@ -893,8 +893,8 @@ export const CalendarEvents = [
     },
     {
         title: "React Class",
-        start: new Date(2025, 6, 16, 10, 0, 0),
-        end: new Date(2025, 6, 17, 12, 0, 0),
+        start: new Date(2025, 6, 15, 10, 0, 0),
+        end: new Date(2025, 6, 16, 12, 0, 0),
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         color: generateRandomColor()
     },

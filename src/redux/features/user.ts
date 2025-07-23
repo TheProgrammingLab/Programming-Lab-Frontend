@@ -9,10 +9,10 @@ type T_User = {
 
 const initialState: { value: T_User} = {
     value: {
-        id: "",
+        id: "1234",
         username: "",
         email: "",
-        role: "student"
+        role: "tutor"
     }
 }
 

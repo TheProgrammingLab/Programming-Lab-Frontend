@@ -486,5 +486,45 @@
         background-color: white;
         left: 0;
         top: 0;
+        padding-top: 56px;
+    }
+
+    .slider-exit {
+        position: absolute;
+        right: 20px;
+        top: 12px;
+        font-size: 1.2rem;
+    }
+
+    .mobile-slider-cnt {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .slider-item,
+    .slider-item-active {
+        width: 100%;
+        font-size: .8rem;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: rgb(74, 74, 74);
+        /* color: white; */
+        height: 66px;
+        border-bottom: 1px solid rgba(196, 196, 196, 0.353);
+        cursor: pointer;
+        padding: 0 32px;
+    }
+
+    .slider-item:last-child {
+        border-bottom: none;
+    }
+
+
+
+    .slider-item-active {
+        background-color: var(--primary) !important;
+        color: white;
     }
 }

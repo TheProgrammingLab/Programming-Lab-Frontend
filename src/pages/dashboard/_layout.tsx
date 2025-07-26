@@ -10,10 +10,14 @@ import Tasks from "./Tasks"
 import Profile from "./Profile"
 import { useEffect } from "react";
 import { MobileTopbar } from "../../components/dashboard/MobileTopbar";
+import { useAppSelector } from "../../redux/hooks";
+import { MobileSlider } from "../../components/dashboard/MobileSlider";
 
 export default function Layout () {
 
     // async function userProfile() {}
+
+    const slider = useAppSelector(state => state.slider.value)
 
     useEffect(() => {
         // fetch user profile for reload
@@ -27,6 +31,14 @@ export default function Layout () {
             <div className="dashboard-main">
                 <Topbar />
                 <MobileTopbar />
+
+                {
+                    slider
+                    ?
+                    <MobileSlider />
+                    :
+                    <></>
+                }
 
                 <div className="dashboard-main-cnt">
                     <Routes>

@@ -1,3 +1,4 @@
+// import { useState } from "react"
 import "../../../styles/dashboard.component.css"
 import { 
     ResponsiveContainer,
@@ -21,6 +22,21 @@ type T_StackedBarChartProps = {
 }
 
 export function Chart ({ data, dataKeys, xKey, colors=['#7e3838', '#c58b8b'] }: T_StackedBarChartProps) {
+    
+    // const [ chartPos, setChartPos ] = useState<Record<string, number>>(
+    //     { top: 36, right: 20, left: -10, bottom: 10 }
+    // )
+
+    function chartPostioning () {
+        const isMobile = window.innerWidth < 600
+
+        if (isMobile) {
+            return { top: 36, right: 0, left: -40, bottom: 10 }
+        }
+
+        return { top: 36, right: 20, left: -10, bottom: 10 }
+    }
+    
     return (
         <div className="overview-chart">
             <div className="overview-chart-title">
@@ -31,7 +47,7 @@ export function Chart ({ data, dataKeys, xKey, colors=['#7e3838', '#c58b8b'] }: 
                  data={data}
                  barSize={24}
                  barGap={30}
-                 margin={{ top: 36, right: 20, left: -10, bottom: 10 }}
+                 margin={chartPostioning()}
                 >
                     <CartesianGrid 
                         stroke="#f3f3f3"

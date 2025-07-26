@@ -4,7 +4,8 @@ type T_User = {
     id: string,
     username: string;
     email: string;
-    role: "student" | "tutor" | "admin"
+    role: "student" | "tutor" | "admin",
+    verified: boolean
 }
 
 const initialState: { value: T_User} = {
@@ -12,12 +13,13 @@ const initialState: { value: T_User} = {
         id: "1234",
         username: "",
         email: "",
-        role: "tutor"
+        role: "student",
+        verified: true
     }
 }
 
 const UserSlice = createSlice({
-    name: "sser",
+    name: "user",
     initialState,
     reducers: {
         setUser: (state, action: PayloadAction<T_User>) => {

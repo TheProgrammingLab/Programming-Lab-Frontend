@@ -64,7 +64,7 @@
 
 .calendar-custom-event {
     padding: 5px 12px;
-    border: 1px solid var(--secondary);
+    border: 1px solid var(--primary);
     border-radius: 4px !important;
 }
 
@@ -93,4 +93,11 @@
     font-size: .55rem;
     font-style: italic;
     font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+    .dashboard-calendar {
+        height: 88vh;
+        padding: 0;
+    }
 }

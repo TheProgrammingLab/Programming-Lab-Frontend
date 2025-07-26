@@ -54,7 +54,7 @@ export function Sidebar() {
 
     function handleCurrentStyle (arg: string): string {
 
-        if (pathname == "/lms" && arg == '') return "nav-item active";
+        if ((pathname == "/lms" || pathname.includes("/profile")) && arg == '' ) return "nav-item active";
         if (pathname.includes("/lms/courses") && arg == 'courses') return "nav-item active";
         if (pathname.includes("/lms/calendar") && arg == 'calendar') return "nav-item active";
         if (pathname.includes("/lms/tasks") && arg == 'tasks') return "nav-item active";

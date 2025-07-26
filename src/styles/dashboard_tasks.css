@@ -40,7 +40,7 @@
     width: 50%;
     height: 100%;
     position: absolute;
-    background-color: var(--secondary);
+    background-color: var(--primary);
     border-radius: 3px;
     left: 0;
     transition: left .4s;
@@ -62,6 +62,7 @@
     gap: 20px;
     border-bottom: 1px solid rgb(220, 220, 220, .5);
     padding-bottom: 12px;
+    align-items: center;
 }
 
 .tasks-card:last-child {
@@ -133,6 +134,7 @@
     height: fit-content;
     align-items: center;
     justify-content: space-between;
+
 }
 
 .tasks-card-cnt-details {
@@ -144,7 +146,7 @@
 
 .tasks-card-cnt-details > span:nth-child(1) {
     font-weight: 500;
-    font-size: .8rem;
+    font-size: .72rem;
     width: 100%;
     
     display: -webkit-box;

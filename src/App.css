@@ -16,8 +16,8 @@ html, body, #root {
 }
 
 #root {
-  --primary: #DC2626;
-  --secondary: #7e3838;
+  --secondary: #c58b8b;
+  --primary: #7e3838;
   --background: #ffffff;
   --text: #262525;
   --navbar-background: white;

@@ -23,6 +23,27 @@ type T_AddCourseModule = {
     removeModule: (topic_id: string) => void
 }
 
+export function AddCourseThumbnail ({  
+    // value, 
+    changeHandler, 
+    placeholder, 
+    name 
+}: Omit<T_ItemInput, "type" | "changeHandler" | "value"> & { changeHandler: (e: React.ChangeEvent<HTMLInputElement>) => void } ) 
+    {
+    return (
+        <div className="add-course-input">
+            <span> <PiDotsSixBold /> </span>
+            <input 
+                type="file" 
+                name={name} 
+                placeholder={placeholder} 
+                // value={value}
+                onChange={changeHandler}
+            />
+        </div>
+    )
+}
+
 export function AddCourseInput ({ type, value, changeHandler, placeholder, name }: T_ItemInput) {
     return (
         <div className="add-course-input">

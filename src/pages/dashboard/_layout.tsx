@@ -7,7 +7,9 @@ import AddCourse from "./Add-Course"
 import CourseContent from "./CourseContent"
 import Calendar from "./Calendar"
 import Tasks from "./Tasks"
+import Profile from "./Profile"
 import { useEffect } from "react";
+import { MobileTopbar } from "../../components/dashboard/MobileTopbar";
 
 export default function Layout () {
 
@@ -24,6 +26,7 @@ export default function Layout () {
 
             <div className="dashboard-main">
                 <Topbar />
+                <MobileTopbar />
 
                 <div className="dashboard-main-cnt">
                     <Routes>
@@ -33,6 +36,7 @@ export default function Layout () {
                         <Route path="/courses/:id" element={<CourseContent /> } />
                         <Route path="/calendar" element={<Calendar />} />
                         <Route path="/tasks" element={<Tasks />} />
+                        <Route path="/profile/*" element={<Profile /> } />
                     </Routes>
                 </div>
             </div>

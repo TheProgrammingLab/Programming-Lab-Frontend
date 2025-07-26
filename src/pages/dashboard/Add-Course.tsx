@@ -2,32 +2,67 @@ import React, { useEffect, useState } from "react"
 import { useAppSelector } from "../../redux/hooks"
 import "../../styles/dashboard_courses.css"
 import { useNavigate } from "react-router-dom"
-import { AddCourseDescription, AddCourseInput, AddCourseModules } from "../../components/dashboard/courses/AddCourseInput"
+import { AddCourseDescription, AddCourseInput, AddCourseModules, AddCourseThumbnail } from "../../components/dashboard/courses/AddCourseInput"
 import { T_Modules, useCourseForm } from "../../hooks"
 import { IoIosArrowBack } from "react-icons/io"
+import { useDispatch } from "react-redux"
+import { addMessage } from "../../redux/features/message"
 
 
 type T_CourseMeta = {
-    topic: string,
+    topic: string
+    niche: string
+    thumbnail: FormData | null
     description: string
 }
 
 export default function Page () {
 
-    const user = useAppSelector(state => state.user.value)
-    const navigate = useNavigate()
     const [ courseMeta, setCourseMeta ] = useState<T_CourseMeta>({
         topic: "",
+        niche: "",
+        thumbnail: null,
         description: ""
     })
+    const user = useAppSelector(state => state.user.value)
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
     const [ courseForm, addModule, removeModule, moduleTopicChange, addModuleChapters, removeModuleChapters, moduleChaptersValueChange ] = useCourseForm()
     
     function handleMetaChange (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
         setCourseMeta({...courseMeta, [e.target.name]: e.target.value})
     }
-    
+
+    function handleThumbnailChange (e: React.ChangeEvent<HTMLInputElement>) {
+        
+        // @ts-expect-error : E>Target>Files[0]
+        if (!e.target?.files[0]) {
+            dispatch(addMessage({label: "No Image found", type: 'warning'}))
+            return;
+        }
+
+        
+        if (e.target.files[0].type != "image/png" &&
+            e.target.files[0].type != "image/jpg" && 
+            e.target.files[0].type != "image/jpeg" &&
+            e.target.files[0].type != "image/webp") {
+            dispatch(addMessage({label: "File type should be JPEG or PNG or WEBP", type: 'warning'}))
+            return;
+        }
+
+
+        const formThumbnail = new FormData();
+        formThumbnail.append("image", e.target.files[0])
+        setCourseMeta({...courseMeta, thumbnail: formThumbnail})
+    }
+
+   
     function goBack () {
         navigate('/lms/courses')
+    }
+
+    async function handleSubmit (e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault()
     }
    
     useEffect(() => {
@@ -45,13 +80,28 @@ export default function Page () {
             </div>
 
             <div className="add-course-page-cnt">
-                <form className="add-course-form">
+                <form className="add-course-form" onSubmit={handleSubmit}> 
+
+                    <AddCourseInput 
+                        type="text" 
+                        value={courseMeta.niche}
+                        changeHandler={handleMetaChange} 
+                        placeholder={"Course Niche"} 
+                        name="niche"
+                    />
+
                     <AddCourseInput 
                         type="text" 
                         value={courseMeta.topic} 
                         changeHandler={handleMetaChange} 
                         placeholder={"Course Title"} 
                         name="topic" 
+                    />
+
+                    <AddCourseThumbnail
+                        changeHandler={handleThumbnailChange} 
+                        placeholder={"Course Thumbnail"} 
+                        name="thunmbnail" 
                     />
 
                     <AddCourseDescription 

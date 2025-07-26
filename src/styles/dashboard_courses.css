@@ -34,16 +34,16 @@
 
 .active-filter-item {
     background-color: #c58b8b;
-    color: var(--secondary);
+    color: var(--primary);
     font-weight: 500;
-    border-color: var(--secondary);
+    border-color: var(--primary);
 }
 
 .add-course-btn {
     width: 160px;
     height: 100%;
     border: none;
-    background-color: var(--secondary);
+    background-color: var(--primary);
     color: white;
     font-size: .6rem;
     font-weight: 600;
@@ -86,7 +86,7 @@
     width: 24px;
     height: 24px;
     border: 4px solid #c58b8b;
-    border-top-color: var(--secondary);
+    border-top-color: var(--primary);
     border-radius: 50%;
     animation: spin .6s linear infinite;
 }
@@ -286,7 +286,7 @@
 
 .course-content-page-hdr-cnt > span:nth-child(1) {
     font-size: .6rem;
-    background-color: var(--secondary);
+    background-color: var(--primary);
     mask-image: linear-gradient(90deg, white, white, transparent);
     width: fit-content;
     padding: 3px 8px;
@@ -338,7 +338,7 @@
     cursor: pointer;
     color: white;
     font-weight: 600;
-    background-color: var(--secondary);
+    background-color: var(--primary);
 }
 
 .course-content-page-hdr-btns > div {
@@ -541,6 +541,12 @@
     outline: none;
 }
 
+.add-course-input > input[type="file"] {
+    display: flex;
+    padding: 12px 16px;
+    background-color: white;
+}
+
 .add-course-input > textarea {
     height: 180px;
     padding: 10px 16px;
@@ -655,7 +661,7 @@
     border: none;
     border-radius: 2px;
     align-self: flex-end;
-    background-color: var(--secondary);
+    background-color: var(--primary);
     color: white;
 }
 
@@ -678,9 +684,31 @@
 }
 
 .add-course-form-btn > button:first-child {
-    background-color: var(--secondary);
+    background-color: var(--primary);
 }
 
 .add-course-form-btn > button:last-child {
     background-color: rgb(122, 122, 122);
+}
+
+@media screen and (max-width: 600px) {
+    .courses-grid-inner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .course-content-page-hdr {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 12px;
+    }
+
+    .course-content-page-hdr-cnt {
+        width: 100%;
+    }
+    
+    .course-content-page-hdr-thumbnail {
+        position: relative;
+        width: 100%;
+        height: 262px;   
+    }
 }

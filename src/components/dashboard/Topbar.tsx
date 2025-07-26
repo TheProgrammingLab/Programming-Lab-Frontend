@@ -144,6 +144,10 @@ export function Topbar() {
         return "topbar-notification"
     }
 
+    function toProfile () {
+        navigate("/lms/profile")
+    }
+
     return (
         <div className="topbar">
             <div className="topbar-page-indicator">
@@ -155,7 +159,7 @@ export function Topbar() {
 
                 <span className={checkForNotification()}> <MdNotifications /> </span>
 
-                <div className="topbar-profile-img">
+                <div className="topbar-profile-img" onClick={toProfile}>
                     {/* <img /> */}
                 </div>
             </div>

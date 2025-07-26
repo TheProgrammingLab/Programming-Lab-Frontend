@@ -17,7 +17,7 @@
 .navbar-logo {
     font-family: TitilliumWeb;
     font-weight: 800;
-    color: var(--secondary);
+    color: var(--primary);
     display: flex;
     gap: 4px;
     align-items: center;
@@ -63,20 +63,20 @@
 .nav-indicator-beam {
     width: 100%;
     height: calc(100% - 2px);
-    background: linear-gradient(transparent, rgb(220, 38, 38, .2) 80%, var(--secondary)  );
+    background: linear-gradient(transparent, rgb(220, 38, 38, .2) 80%, var(--primary)  );
 }
 
 .nav-indicator-line {
     width: 100%;
     height: 2px;
-    background-color: var(--secondary);
+    background-color: var(--primary);
 }
 
 .nav-btn > button {
     width: 120px;
     border: none;
     color: white;
-    background-color: var(--secondary);
+    background-color: var(--primary);
     height: 34px;
     font-size: .6rem;
     font-weight: 600;
@@ -115,7 +115,7 @@
     font-size: clamp(.46rem, .8vw, .66rem);
     font-weight: 400;
     width: 35%;
-    background: linear-gradient(90deg, var(--secondary) 72%, transparent);
+    background: linear-gradient(90deg, var(--primary) 72%, transparent);
     color: white;
     padding: 3px 0;
     padding-left: 20px;
@@ -124,7 +124,7 @@
 .landing-page-banner-left > div:nth-child(2) {
     font-size: clamp(2.4rem, 4.68vw, 4rem);
     line-height: clamp(2.88rem, 5.4vw, 5rem);
-    color: var(--secondary);
+    color: var(--primary);
     font-family: TitilliumWeb;
     font-weight: 800;
 }
@@ -152,14 +152,14 @@
 
 .landing-page-banner-left-btns > button:first-child {
     border: none;
-    background-color: var(--secondary);
+    background-color: var(--primary);
     color: white;
 }
 
 .landing-page-banner-left-btns > button:last-child {
     background-color: transparent;
-    color: var(--secondary);
-    border: 2px solid var(--secondary);
+    color: var(--primary);
+    border: 2px solid var(--primary);
 }
 
 .landing-page-banner-left-extra {
@@ -178,7 +178,7 @@
 }
 
 .landing-page-banner-left-extra-cnt > span:first-child {
-    color: var(--secondary);
+    color: var(--primary);
     font-size: clamp(1.12rem, 2vw, 1.72rem);
     font-weight: 600;
 }
@@ -205,7 +205,7 @@
     left: 0;
     width: 50%;
     height: calc(100% - 120px);
-    background-color: var(--secondary);
+    background-color: var(--primary);
     z-index: 1;
     clip-path: polygon(40% 0, 100% 0, 0 100%, 0 calc(100% - 240px));
 }
@@ -268,7 +268,7 @@
     font-weight: 400;
     color: white;
     padding: 4px 32px;
-    background: linear-gradient(90deg, transparent 5%,  var(--secondary) 15%,  var(--secondary) 50%,  var(--secondary) 85%, transparent 90%);
+    background: linear-gradient(90deg, transparent 5%,  var(--primary) 15%,  var(--primary) 50%,  var(--primary) 85%, transparent 90%);
 }
 
 .language-slide-carousel {
@@ -299,7 +299,7 @@
     align-items: center;
     gap: 8px;
     font-size: 1.28rem;
-    color: var(--secondary);
+    color: var(--primary);
 
     span:first-child {
         display: flex;
@@ -334,7 +334,7 @@
     font-size: clamp(.46rem, .8vw, .66rem);
     font-weight: 400;
     width: 120px;
-    background: linear-gradient(90deg, var(--secondary) 72%, transparent);
+    background: linear-gradient(90deg, var(--primary) 72%, transparent);
     color: white;
     padding: 3px 0;
     padding-left: 20px;
@@ -351,7 +351,7 @@
     font-family: TitilliumWeb;
     font-size: clamp(1.4rem, 2.2vw, 2rem);
     font-weight: 800;
-    color: var(--secondary);
+    color: var(--primary);
     width: 40%;
 }
 
@@ -371,7 +371,7 @@
     border-radius: 2px;
     cursor: pointer;   
     border: none;
-    background-color: var(--secondary);
+    background-color: var(--primary);
     color: white;
 }
 
@@ -399,7 +399,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(transparent 50%, var(--secondary));
+    background: linear-gradient(transparent 50%, var(--primary));
 }
 
 .our-offer-btm-card > img {
@@ -503,7 +503,7 @@
     font-family: TitilliumWeb;
     font-size: clamp(1.4rem, 2.2vw, 2rem);
     font-weight: 800;
-    color: var(--secondary);
+    color: var(--primary);
 }
 
 .landing-page-about-right > span:nth-child(3) {
@@ -525,7 +525,7 @@
     font-size: clamp(.46rem, .8vw, .66rem);
     font-weight: 400;
     width: 108px;
-    background: linear-gradient(90deg, transparent 8%, var(--secondary) 16%, var(--secondary) 88%, transparent);
+    background: linear-gradient(90deg, transparent 8%, var(--primary) 16%, var(--primary) 88%, transparent);
     color: white;
     padding: 3px 0;
     text-align: center;
@@ -535,7 +535,7 @@
     font-family: TitilliumWeb;
     font-size: clamp(1.4rem, 2.2vw, 2rem);
     font-weight: 800;
-    color: var(--secondary);
+    color: var(--primary);
 }
 
 .landing-page-course > div:nth-child(3) {
@@ -562,7 +562,7 @@
     font-weight: 600;
     color: white;
     padding: 4px 32px;
-    background: linear-gradient(90deg, transparent 5%,  var(--secondary) 15%,  var(--secondary) 50%,  var(--secondary) 85%, transparent 90%);
+    background: linear-gradient(90deg, transparent 5%,  var(--primary) 15%,  var(--primary) 50%,  var(--primary) 85%, transparent 90%);
 }
 
 .landing-page-testimonial-cnt {
@@ -862,7 +862,7 @@
         font-weight: 400;
         color: white;
         padding: 4px 32px;
-        background: linear-gradient(90deg, transparent 5%,  var(--secondary) 15%,  var(--secondary) 50%,  var(--secondary) 85%, transparent 90%);
+        background: linear-gradient(90deg, transparent 5%,  var(--primary) 15%,  var(--primary) 50%,  var(--primary) 85%, transparent 90%);
         align-self: center; 
     }
 

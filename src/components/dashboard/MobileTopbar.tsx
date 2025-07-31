@@ -1,13 +1,17 @@
 import { AiOutlineMenu } from "react-icons/ai"
 import "../../styles/dashboard.component.css"
 import logo from  "/images/logo.webp"
+import { openSlider } from "../../redux/features/slider"
+import { useAppDispatch } from "../../redux/hooks"
 
 export function MobileTopbar () {
 
-    function handleClick () {
+    const dispatch = useAppDispatch()
 
+    function handleClick () {
+        dispatch(openSlider())
     }
-    
+
     return (
         <div className="mobile-topbar">
             <div className="logo">

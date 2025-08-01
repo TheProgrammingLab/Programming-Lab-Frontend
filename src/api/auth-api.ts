@@ -9,6 +9,7 @@ type t_signup = {
     email: string
     username: string
     password: string
+    role: "student" | "tutor" | ""
     confirmPassword: string
 
 }
@@ -28,6 +29,7 @@ export async function auth_register (signup: t_signup) {
         method: "POST",
         body: JSON.stringify(signup)
     })
+
 
     return response;
 }

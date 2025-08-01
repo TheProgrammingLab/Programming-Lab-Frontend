@@ -10,11 +10,11 @@ type T_User = {
 
 const initialState: { value: T_User} = {
     value: {
-        id: "1234",
+        id: "",
         username: "",
         email: "",
         role: "student",
-        verified: true
+        verified: false
     }
 }
 

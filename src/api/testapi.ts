@@ -84,3 +84,14 @@ export function fetchCalenderEvents (): Promise<I_Response> {
         }, 2000)
     })
 }
+
+export function fetchUserCourses (): Promise<I_Response> {
+   return new Promise((resolve, _) => {
+        setTimeout(() => {
+            resolve({ 
+                status: 200, 
+                data: AllCourses.slice(0, 12)
+            })
+        }, 2000)
+    })
+}

@@ -8,6 +8,7 @@ import CourseContent from "./CourseContent"
 import Calendar from "./Calendar"
 import Tasks from "./Tasks"
 import Profile from "./Profile"
+import Notification from "./Notification"
 import { useEffect } from "react";
 import { MobileTopbar } from "../../components/dashboard/MobileTopbar";
 import { useAppSelector } from "../../redux/hooks";
@@ -49,6 +50,7 @@ export default function Layout () {
                         <Route path="/calendar" element={<Calendar />} />
                         <Route path="/tasks" element={<Tasks />} />
                         <Route path="/profile/*" element={<Profile /> } />
+                        <Route path="/notifications/*" element={<Notification />} />
                     </Routes>
                 </div>
             </div>

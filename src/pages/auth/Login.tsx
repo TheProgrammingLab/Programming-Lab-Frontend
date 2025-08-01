@@ -4,9 +4,11 @@ import "../../styles/auth.css"
 import { Wrapper } from "./AuthWrapper"
 import { useNavigate } from "react-router-dom"
 import { useAppDispatch } from "../../redux/hooks"
-import { fetchUserProfile } from "../../api"
+// import { fetchUserProfile } from "../../api"
 import { addMessage } from "../../redux/features/message"
 import { setUser } from "../../redux/features/user"
+import { auth_login } from "../../api/auth-api"
+import { I_Response } from "../../utils/types"
 
 type LoginData = {
     role: "student" | "tutor" | ""
@@ -17,7 +19,7 @@ type LoginData = {
 function LoginForm () {
 
     const [ login, setLogin ] = useState<LoginData>({
-        role: "",
+        role: "student",
         loginId: "",
         password: ""
     })
@@ -54,17 +56,18 @@ function LoginForm () {
         }
         setLoading(true)
         
-        const response = await fetchUserProfile(login.role);
+        // const response = await fetchUserProfile(login.role);
+        const response: I_Response = await auth_login(login)
         setLoading(false)
         
         if (response.status != 200) {
-            dispatch(addMessage({ type: "failed", label: response.error as string}))    
+            dispatch(addMessage({ type: "failed", label: response?.error as string}))    
             return;
         }
 
         if (response.status == 200) {
             dispatch(addMessage({ type: "passed", label: "Login Successful"}))    
-            dispatch(setUser({ ...response.data }))
+            dispatch(setUser({ ...response?.data }))
             navigate('/lms')
         }
 

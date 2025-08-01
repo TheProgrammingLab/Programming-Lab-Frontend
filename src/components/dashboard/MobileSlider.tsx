@@ -2,10 +2,13 @@ import { BsX } from "react-icons/bs"
 import "../../styles/dashboard.component.css"
 import { MdAssignment, MdDashboard } from "react-icons/md";
 import { FaBookReader } from "react-icons/fa";
-import { IoCalendar } from "react-icons/io5";
-import { RiUserCommunityFill } from "react-icons/ri";
+import { IoCalendar, IoPerson } from "react-icons/io5";
+// import { RiUserCommunityFill } from "react-icons/ri";
 import { PiStudentFill } from "react-icons/pi";
-import { IoAnalytics, IoGameController } from "react-icons/io5";
+import { 
+    IoAnalytics, 
+    // IoGameController 
+} from "react-icons/io5";
 import { MdNotifications } from "react-icons/md"
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -17,8 +20,9 @@ const _NavigationItems = [
     { id: 'courses', label: 'Courses', icon: <FaBookReader /> },
     { id: 'calendar', label: 'Calendar', icon: <IoCalendar /> },
     { id: 'tasks', label: 'Tasks', icon: <MdAssignment /> },
-    { id: 'community', label: 'Community', icon: <RiUserCommunityFill /> },
-    { id: 'games', label: 'Games', icon: <IoGameController /> },
+    { id: 'profile', label: 'Profile', icon: <IoPerson /> },
+    // { id: 'community', label: 'Community', icon: <RiUserCommunityFill /> },
+    // { id: 'games', label: 'Games', icon: <IoGameController /> },
     { id: 'notifications', label: 'Notifications', icon: <MdNotifications /> }
 ]
 
@@ -38,7 +42,7 @@ export function MobileSlider () {
 
     function handleCurrentStyle (arg: string): string {
 
-        if ((pathname == "/lms" || pathname.includes("/profile")) && arg == '' ) return "slider-item-active";
+        if ((pathname == "/lms") && arg == '' ) return "slider-item-active";
         if (pathname.includes("/lms/courses") && arg == 'courses') return "slider-item-active";
         if (pathname.includes("/lms/calendar") && arg == 'calendar') return "slider-item-active";
         if (pathname.includes("/lms/tasks") && arg == 'tasks') return "slider-item-active";
@@ -47,6 +51,7 @@ export function MobileSlider () {
         if (pathname.includes("/lms/analytics") && arg == 'analytics') return "slider-item-active";
         if (pathname.includes("/lms/games") && arg == 'games') return "slider-item-active";
         if (pathname.includes("/lms/notifications") && arg == 'notifications') return "slider-item-active";
+        if (pathname.includes("/lms/profile") && arg == 'profile') return "slider-item-active";
         
         return "slider-item"
     }

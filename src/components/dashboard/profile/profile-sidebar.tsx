@@ -1,6 +1,8 @@
 import { ReactNode } from "react"
 import "../../../styles/profile.css"
 import { useLocation, useNavigate } from "react-router-dom"
+import { IoPerson, IoLockClosed } from "react-icons/io5"
+import { FaBookReader } from "react-icons/fa"
 
 type T_ProfileSidebarItem = {
     label: string
@@ -24,8 +26,8 @@ function ProfileSidebarItem ({ label, nav, icon }: T_ProfileSidebarItem) {
 
     function handleStyling () {
         if (!nav && pathname == "/lms/profile" ) return "profile-page-sidebar-item-active";
-        if (nav == "reset-password" && pathname == "/lms/profile/reset-password" ) return "profile-page-sidebar-item-active";
-        if (nav == "my-courses" && pathname == "/lms/profile/my-courses" ) return "profile-page-sidebar-item-active";
+        if (nav == "change-password" && pathname == "/lms/profile/change-password" ) return "profile-page-sidebar-item-active";
+        if (nav == "my-courses" && pathname.includes("/lms/profile/my-courses") ) return "profile-page-sidebar-item-active";
 
         return "profile-page-sidebar-item";
     }
@@ -41,9 +43,9 @@ function ProfileSidebarItem ({ label, nav, icon }: T_ProfileSidebarItem) {
 export function ProfileSidebar () {
     return (
         <div className="profile-page-sidebar">
-            <ProfileSidebarItem label="My Account" icon={<></>} nav='' />
-            <ProfileSidebarItem label="Reset Password" icon={<></>} nav="reset-password" />
-            <ProfileSidebarItem label="My Courses" icon={<></>} nav="my-courses" />
+            <ProfileSidebarItem label="My Account" icon={<IoPerson />} nav='' />
+            <ProfileSidebarItem label="Change Password" icon={<IoLockClosed />} nav="change-password" />
+            <ProfileSidebarItem label="My Courses" icon={<FaBookReader />} nav="my-courses" />
         </div>
     )
 }

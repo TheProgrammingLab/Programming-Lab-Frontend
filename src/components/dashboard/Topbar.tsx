@@ -144,6 +144,10 @@ export function Topbar() {
         return "topbar-notification"
     }
 
+    function toNotification () {
+        navigate("/lms/notifications")
+    }
+
     function toProfile () {
         navigate("/lms/profile")
     }
@@ -157,7 +161,7 @@ export function Topbar() {
             <div className="topbar-cnt">
                 <SearchBar />
 
-                <span className={checkForNotification()}> <MdNotifications /> </span>
+                <span className={checkForNotification()} onClick={toNotification}> <MdNotifications /> </span>
 
                 <div className="topbar-profile-img" onClick={toProfile}>
                     {/* <img /> */}

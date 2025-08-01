@@ -3,9 +3,12 @@ import logo from  "/images/logo.webp"
 import { MdAssignment, MdDashboard } from "react-icons/md";
 import { FaBookReader } from "react-icons/fa";
 import { IoCalendar } from "react-icons/io5";
-import { RiUserCommunityFill } from "react-icons/ri";
+// import { RiUserCommunityFill } from "react-icons/ri";
 import { PiStudentFill } from "react-icons/pi";
-import { IoAnalytics, IoGameController } from "react-icons/io5";
+import { 
+    IoAnalytics, 
+    // IoGameController 
+} from "react-icons/io5";
 import { MdNotifications } from "react-icons/md"
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -18,8 +21,8 @@ const _NavigationItems = [
     { id: 'courses', label: 'Courses', icon: <FaBookReader /> },
     { id: 'calendar', label: 'Calendar', icon: <IoCalendar /> },
     { id: 'tasks', label: 'Tasks', icon: <MdAssignment /> },
-    { id: 'community', label: 'Community', icon: <RiUserCommunityFill /> },
-    { id: 'games', label: 'Games', icon: <IoGameController /> },
+    // { id: 'community', label: 'Community', icon: <RiUserCommunityFill /> },
+    // { id: 'games', label: 'Games', icon: <IoGameController /> },
     { id: 'notifications', label: 'Notifications', icon: <MdNotifications /> }
 ]
 

@@ -206,6 +206,11 @@
     outline: none;
 }
 
+.auth-input-field > input:focus {
+    box-shadow: 0 0 2px rgba(127, 18, 18, 0.476);
+    border: 1px solid rgba(127, 18, 18, 0.476);
+}
+
 .auth-input-field > input:focus::placeholder {
     visibility: hidden;
 }

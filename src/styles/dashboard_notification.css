@@ -1,0 +1,48 @@
+.notification-page{
+    width: 100%;
+    height: 100%;
+}
+
+.no-notification {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    font-size: .88rem;
+    color: rgb(113, 113, 113);
+    font-weight: 600;
+}
+
+.no-notification > div:first-child {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.6rem;
+    rotate: -20deg;
+    background-color: rgb(230, 230, 230);
+    color: rgb(113, 113, 113);
+    border-radius: 50%;
+    position: relative;
+}
+
+.no-notification > div:first-child::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    content: "0";
+    font-size: 1.4rem;
+    background-color: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transform: translate(-50%, 0%) rotate(20deg);
+}

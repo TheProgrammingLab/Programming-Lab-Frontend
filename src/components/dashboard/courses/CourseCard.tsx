@@ -13,6 +13,7 @@ type T_CourseCard = {
     modules: number
     date: number
     slug: string
+    type?: 'regular' | 'personal'
 }
 
 export function CourseThumbnail ({ thumbnail, loading=false, extra_class='' }: { thumbnail: string, loading?: boolean , extra_class?: string}) {
@@ -31,12 +32,16 @@ export function CourseThumbnail ({ thumbnail, loading=false, extra_class='' }: {
     )
 }
 
-export function CourseCard ({ slug, thumbnail, niche, title, modules, date }: T_CourseCard) {
+export function CourseCard ({ type='regular', slug, thumbnail, niche, title, modules, date }: T_CourseCard) {
 
     const navigate = useNavigate()
     
     function handleClick () {
-        navigate(`/lms/courses/${slug}`)
+        if (type == 'regular') {
+            navigate(`/lms/courses/${slug}`)
+        } else {
+            navigate(`/lms/profile/my-courses/${slug}`)
+        }
     }
 
     return (

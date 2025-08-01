@@ -3,25 +3,9 @@ import "../../../styles/profile.css"
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks"
 import { BsPerson } from "react-icons/bs"
 import { addMessage } from "../../../redux/features/message"
+import { ProfileInput } from "./profile-input"
 
-type T_ProfileInput = {
-    label: string
-    value: string
-    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-}
 
-function ProfileInput ({ label, value, handleChange }: T_ProfileInput) {
-    return (
-        <div className="profile-index-input">
-            <span>{label}</span>
-            <input 
-                type="text" 
-                value={value} 
-                onChange={handleChange}
-            />
-        </div>
-    )
-}
 
 export function ProfileIndex () {
 
@@ -110,8 +94,8 @@ export function ProfileIndex () {
                 </div>
             </div>
 
-            <ProfileInput label={"username"} value={userState.username as string} handleChange={changeHandler}  />
-            <ProfileInput label={"email"} value={userState.email as string} handleChange={changeHandler}  />
+            <ProfileInput name="username" label={"username"} value={userState.username as string} handleChange={changeHandler}  />
+            <ProfileInput name="email" label={"email"} value={userState.email as string} handleChange={changeHandler}  />
 
             <button className="profile-index-btn">
                 Save Changes

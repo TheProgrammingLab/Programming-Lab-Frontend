@@ -6,23 +6,26 @@ import { Button, InputFields, RoleCheckbox } from "../../components/auth"
 import { validateInput } from "../../utils/functions"
 import { useAppDispatch } from "../../redux/hooks"
 import { addMessage } from "../../redux/features/message"
+import { auth_register } from "../../api/auth-api"
+import { setUser } from "../../redux/features/user"
+import { I_Response } from "../../utils/types"
 
 type LoginData = {
     role: "student" | "tutor" | ""
     email: string
     username: string
     password: string
-    passwordConfirm: string
+    confirmPassword: string
 }
 
 function SignupForm () {
 
     const [ signup, setSignup ] = useState<LoginData>({
-        role: "",
+        role: "student",
         email: "",
         username: "",
         password: "",
-        passwordConfirm: ""
+        confirmPassword: ""
     })
     const [ passwordState_1, setPasswordState_1 ] = useState<"password" | "text">("password")
     const [ passwordState_2, setPasswordState_2 ] = useState<"password" | "text">("password")
@@ -62,18 +65,33 @@ function SignupForm () {
         dispatch(addMessage({ label: arg, type: "warning" }))
     }
     
-    function handleSubmit (e: React.FormEvent<HTMLFormElement>) {
+    async function handleSubmit (e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
 
         
         if (!validateInput(signup.username, "username", handleError)) return;
         if (!validateInput(signup.email, "email", handleError) ) return;
         if (!validateInput(signup.password, "password", handleError) ) return;
-        if (!validateInput(signup.passwordConfirm, "confirm password", handleError, signup.password) ) return;
+        if (!validateInput(signup.confirmPassword, "confirm password", handleError, signup.password) ) return;
         if (!validateInput(signup.role, "Account Type", handleError) ) return;
 
         
         setLoading(true)
+
+        const response: I_Response = await auth_register(signup)
+        setLoading(false)
+        
+        if (response.status != 200) {
+            dispatch(addMessage({ type: "failed", label: response?.error as string}))    
+            return;
+        }
+
+        if (response.status == 200) {
+            dispatch(addMessage({ type: "passed", label: "Login Successful"}))    
+            dispatch(setUser({ ...response?.data }))
+            navigate('/lms')
+        }
+
     }
 
     return (
@@ -91,7 +109,7 @@ function SignupForm () {
                     <InputFields id="signup-username" placeholder="E.g John Doe" name="username" type="text" label="Username" value={signup.username} handleChange={handleChange} />
                     <InputFields id="signup-email" placeholder="E.g johndoe@gmail.com" name="email" type="email" label="Email" value={signup.email} handleChange={handleChange} />
                     <InputFields id="signup-password" placeholder="Your Passsword" name="password" type={passwordState_1} label="Password" value={signup.password} handleChange={handleChange} hasIcon={true} iconClick={() => togglePasswordState(1)} />
-                    <InputFields id="signup-password-2" placeholder="Verify Your Passsword" name="passwordConfirm" type={passwordState_2} label="Confirm Password" value={signup.passwordConfirm} handleChange={handleChange} hasIcon={true} iconClick={() => togglePasswordState(2)} />
+                    <InputFields id="signup-password-2" placeholder="Verify Your Passsword" name="confirmPassword" type={passwordState_2} label="Confirm Password" value={signup.confirmPassword} handleChange={handleChange} hasIcon={true} iconClick={() => togglePasswordState(2)} />
 
 
                     <Button label="Sign Up" loading={loading} />

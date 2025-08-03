@@ -24,7 +24,7 @@
     align-items: center;
     font-size: 3.6rem;
     rotate: -20deg;
-    background-color: rgb(230, 230, 230);
+    background: linear-gradient(rgb(206, 206, 206), rgb(249, 249, 249));
     color: rgb(113, 113, 113);
     border-radius: 50%;
     position: relative;

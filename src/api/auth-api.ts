@@ -15,23 +15,37 @@ type t_signup = {
 }
 
 export async function auth_login (login: t_auth) {
-    const response = await fetch(`${apiUrl}/login`, {
-        method: "POST",
-        body: JSON.stringify(login)
-    })
+    try {    
+        
+        const response = await fetch(`${apiUrl}/auth/login`, {
+            method: 'POST',
+            body: JSON.stringify(login)
+        })
 
-    return response;
+        console.log(response)
+
+        return response;
+    } catch (err) {
+        console.log(err)
+        return err;
+    }
 }
 
 
 export async function auth_register (signup: t_signup) {
-    const response = await fetch(`${apiUrl}/signup`, {
-        method: "POST",
-        body: JSON.stringify(signup)
-    })
+    try {
+        const response = await fetch(`${apiUrl}/auth/signup`, {
+            method: "POST",
+            body: JSON.stringify(signup)
+        })
 
 
-    return response;
+        return response;
+    } catch (err) {
+        console.log(err)
+        return err;
+    }
+
 }
 
 export async function auth_send_verification_email () {}

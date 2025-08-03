@@ -57,11 +57,11 @@ function LoginForm () {
         setLoading(true)
         
         // const response = await fetchUserProfile(login.role);
-        const response: I_Response = await auth_login(login)
+        const response: I_Response | any = await auth_login(login)
         setLoading(false)
         
         if (response.status != 200) {
-            dispatch(addMessage({ type: "failed", label: response?.error as string}))    
+            dispatch(addMessage({ type: "failed", label: (response?.error as string ) || "Login Error, try again"}))    
             return;
         }
 

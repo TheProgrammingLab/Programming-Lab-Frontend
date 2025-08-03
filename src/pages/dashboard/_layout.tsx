@@ -1,5 +1,5 @@
 import "../../styles/dashboard_index.css"
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { Sidebar, Topbar } from "../../components/dashboard"
 import Index from "./Index"
 import Courses from "./Courses"
@@ -11,17 +11,42 @@ import Profile from "./Profile"
 import Notification from "./Notification"
 import { useEffect } from "react";
 import { MobileTopbar } from "../../components/dashboard/MobileTopbar";
-import { useAppSelector } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { MobileSlider } from "../../components/dashboard/MobileSlider";
+import { user_profile } from "../../api/user-api";
+import { I_Response } from "../../utils/types";
+import { setUser } from "../../redux/features/user";
+import { addMessage } from "../../redux/features/message";
 
 export default function Layout () {
 
-    // async function userProfile() {}
-
     const slider = useAppSelector(state => state.slider.value)
+    const user = useAppSelector(state => state.user.value)
+    const dispatch = useAppDispatch()
+    const navigate = useNavigate()
+
+    
+    async function userProfile() {
+        const response: I_Response | any = await user_profile()
+
+        if (response.status != 200) {
+            dispatch(addMessage({ label: "Login not found", type: "failed" }))
+            navigate("/login")
+            return;
+        }
+
+        dispatch(setUser(response.data))
+    }
 
     useEffect(() => {
         // fetch user profile for reload
+        if (user.email) return;
+        userProfile();
+
+        if (!user.email) {
+            dispatch(addMessage({ label: "Login not found", type: "failed" }))
+            navigate("/login")
+        }
     }, [])
 
     return (

@@ -3,75 +3,44 @@ import "../../styles/dashboard.component.css"
 import { MdNotifications } from "react-icons/md"
 import { useEffect, useRef, useState } from "react"
 import { BsSearch } from "react-icons/bs"
+import { useDebounce } from "../../hooks"
 
 function SearchBar () {
     
     const [ search, setSearch ] = useState<string>("")
-    const [ searchActivated, setSearchActivated ] = useState<boolean>(false)
-    const [ searchResult, setSearchResult ] = useState<any[]>([])
+    const debouncedSearch = useDebounce(search.trim());
+
+    
 
     const ref = useRef<HTMLDivElement>(null)
 
+    const navigate = useNavigate()
+
     function handleChange (e: React.ChangeEvent<HTMLInputElement>) {
         setSearch(e.target.value)
-
-        if (searchActivated) setSearchActivated(false);
     }
 
-    function handleSearch () {
-        if (!search) return;
-        setSearchActivated(true)
-
-        setSearchResult([])
-    }
-
-    function containerBlurFunc (e: React.PointerEvent<HTMLElement | HTMLDivElement>) {
-        if (!ref.current) return;
-
-        if (!ref.current.contains(e.target as Node)) {
-            setSearchActivated(false)
-        }
-        
-
-    }
-
-    function handleContainerBlur () {
-        const app = document.querySelector('.app')
-        if (!app) return;
-
-        app.addEventListener('pointerdown', containerBlurFunc as unknown as EventListenerOrEventListenerObject)
-        
-        return () => app.removeEventListener('pointerdown', containerBlurFunc as unknown as EventListenerOrEventListenerObject)
-    }
 
     useEffect(() => {
-        handleContainerBlur()
-    }, [])
+        if (!debouncedSearch) {
+            navigate(`/lms/courses`)
+            return;
+        }
+        
+        navigate(`/lms/courses?search=${debouncedSearch}`)
+    }, [debouncedSearch])
+
 
     return (
         <div className="searchbar" ref={ref}>
             <div className="searchbar-input">
                 <input type="text" value={search} onChange={handleChange} placeholder="Search for Courses"  />
                 
-                <span className="search-icon" onClick={handleSearch}>
+                <span className="search-icon">
                     <BsSearch />
                 </span>
             </div>
 
-            {
-                searchActivated &&
-                <div className="searchbar-result">
-                    {
-                        !searchResult[0]
-                        ?
-                        <div className="bottom-loader">
-                            <div />
-                        </div>
-                        :
-                        <></>
-                    }
-                </div>
-            }
         </div>
     )
 }

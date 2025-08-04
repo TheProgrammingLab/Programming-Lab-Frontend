@@ -1,7 +1,8 @@
-import { TaskCard } from "../../components/dashboard/tasks/TaskCard"
+// import { TaskCard } from "../../components/dashboard/tasks/TaskCard"
 import "../../styles/dashboard_tasks.css"
 import { CSSProperties, useState } from "react"
-import { LoremIpsum } from "../../utils/functions"
+// import { LoremIpsum } from "../../utils/functions"
+import { Assignments } from "../../components/dashboard/tasks/Assignments"
 
 type T_Filter = 'assignment' | 'project'
 
@@ -31,12 +32,15 @@ export default function Page () {
                 <div className="tasks-filter-indicator" style={handleIndicator()} />
             </div>
 
-            <div className="tasks-content">
-                <TaskCard thumbnail={""} id={"id"} description={LoremIpsum()} dateAdded={0} deadLine={0} status={"load"} />
-                <TaskCard thumbnail={""} id={"id"} description={LoremIpsum()} dateAdded={0} deadLine={0} status={"load"} />
-                <TaskCard thumbnail={""} id={"id"} description={LoremIpsum()} dateAdded={0} deadLine={0} status={"load"} />
-                <TaskCard thumbnail={""} id={"id"} description={LoremIpsum()} dateAdded={0} deadLine={0} status={"load"} />
-            </div>
+            <>
+                {
+                    filter === "assignment"
+                    ?
+                    <Assignments />
+                    :
+                    <></>
+                }
+            </>
 
         </div>
     )

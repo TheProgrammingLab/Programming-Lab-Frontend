@@ -19,7 +19,7 @@ export function InputFields ({ id,  type, placeholder, name, label, value, handl
         <div className="auth-input-field">
             <label htmlFor={id}>{label}</label>
 
-            <input type={type} placeholder={placeholder} name={name} value={value} onChange={handleChange}/>
+            <input type={type} placeholder={placeholder} name={name} value={value} onChange={handleChange} autoComplete="" />
 
             {
                 hasIcon ?

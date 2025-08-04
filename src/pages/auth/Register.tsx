@@ -78,7 +78,7 @@ function SignupForm () {
         
         setLoading(true)
 
-        const response: I_Response = await auth_register(signup)
+        const response: I_Response | any = await auth_register(signup)
         setLoading(false)
         
         if (response.status != 200) {

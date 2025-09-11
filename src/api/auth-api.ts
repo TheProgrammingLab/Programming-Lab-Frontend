@@ -1,59 +1,54 @@
 const apiUrl = import.meta.env.VITE_API_URL;
+import axios from "axios";
 
 type t_auth = {
-    loginId: string
-    password: string
-}
+  loginId: string;
+  password: string;
+};
 
 type t_signup = {
-    email: string
-    username: string
-    password: string
-    role: "student" | "tutor" | ""
-    confirmPassword: string
+  email: string;
+  username: string;
+  password: string;
+  role: "student" | "tutor" | "";
+  confirmPassword: string;
+};
 
+export async function auth_login(login: t_auth) {
+  try {
+    const response = await axios.post(`${apiUrl}/auth/login`, login, {
+      withCredentials: true,
+    });
+
+    console.log(response);
+
+    return response;
+  } catch (err) {
+    console.log("error", err);
+    return err;
+  }
 }
 
-export async function auth_login (login: t_auth) {
-    try {    
-        
-        const response = await fetch(`${apiUrl}/auth/login`, {
-            method: 'POST',
-            body: JSON.stringify(login)
-        })
+export async function auth_register(signup: t_signup) {
+  try {
+    const response = await fetch(`${apiUrl}/auth/signup`, {
+      method: "POST",
+      body: JSON.stringify(signup),
+    });
 
-        console.log(response)
-
-        return response;
-    } catch (err) {
-        console.log(err)
-        return err;
-    }
+    return response;
+  } catch (err) {
+    console.log(err);
+    return err;
+  }
 }
 
+export async function auth_send_verification_email() {}
 
-export async function auth_register (signup: t_signup) {
-    try {
-        const response = await fetch(`${apiUrl}/auth/signup`, {
-            method: "POST",
-            body: JSON.stringify(signup)
-        })
+export async function auth_verification() {}
 
+export async function auth_forgot_password() {}
 
-        return response;
-    } catch (err) {
-        console.log(err)
-        return err;
-    }
+export async function auth_reset_password() {}
 
-}
-
-export async function auth_send_verification_email () {}
-
-export async function auth_verification () {}
-
-export async function auth_forgot_password () {}
-
-export async function auth_reset_password () {}
-
-export async function auth_logout () {}
+export async function auth_logout() {}
